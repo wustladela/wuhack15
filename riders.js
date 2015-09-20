@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				node.appendChild(dateLabel);
 				var date = new Date(ride.get("date"));
 				var localDate = date.toLocaleTimeString();
-				var dateNode = document.createTextNode(localDate);   
+				var dateNode = document.createTextNode(date);   
 				node.appendChild(dateNode);    
 				var br4 = document.createElement("br"); 
 				node.appendChild(br4);
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					rides2.add("riders", Parse.User.current().get("firstName") + " " + Parse.User.current().get("lastName"));
 					rides2.save(null, {
 						success: function(object) {
-							alert("You've been signed up!");
+							alert("You successfully joined this ride!");
 						}, 
 						error: function(error) {
 							alert("Error: " + error.code + " " + error.message);
