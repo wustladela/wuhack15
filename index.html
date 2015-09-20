@@ -77,11 +77,11 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">JCar</h1>
                         <p class="intro-text">Need a ride?<br>Git in the car.</p>
-                        <a href="#signup" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
+                        <a href="#signup" class="introbtn page-scroll">
+                            <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
                         </a>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
+                        <a href="#signup" class="introbtn page-scroll">
+                            <button type="submit" class="btn btn-success btn-lg">Log In</button>
                         </a>
                     </div>
                 </div>
@@ -93,146 +93,129 @@
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>What is JCar?</h2>
-                <p>
-                    JCar is a carpool coordinator.
-                </p>
-                <p>
-                    JCar matches drivers with riders who share the same destination. 
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Signup Section -->
-    <section id="signup" class="content-section text-center">
-        <div class="signup-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Sign up for JCar</h2>
-                    <p>It's free to use JCar! Fill out the form below to get started. 
-                        <br><em>NOTE: You must be a WashU student.</em>
-                    </p>
-                    <form class="form-horizontal">
-                        <fieldset>
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="firstName">First Name</label>  
-                                <div class="col-md-4">
-                                    <input id="firstName" name="firstName" type="text" placeholder="first name" class="form-control input-md" required="">  
-                                </div>
-                            </div>
-                            
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="lastName">Last Name</label>  
-                                <div class="col-md-4">
-                                    <input id="lastName" name="lastName" type="text" placeholder="last name" class="form-control input-md" required="">    
-                                </div>
-                            </div>
-                            
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="email">WashU email</label>  
-                                <div class="col-md-4">
-                                    <input id="email" name="email" type="text" placeholder="@wustl.edu" class="form-control input-md" required="">  
-                                </div>
-                            </div>
-                            
-                            <!-- Password input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="password">Password</label>
-                                <div class="col-md-4">
-                                    <input id="password" name="password" type="password" placeholder="password" class="form-control input-md" required=""> 
-                                </div>
-                            </div>
-                            
-                            <!-- Confirm password-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="confirmPassword">Confirm password</label>
-                                <div class="col-md-4">
-                                    <input id="confirmPassword" name="confirmPassword" type="password" placeholder="retype your password" class="form-control input-md" required="">
-                                </div>
-                            </div>
-                            
-                            <!-- Alert message for password check-->
-                            <div class="passwordMatchSymbol" id="checkPasswordMatch">
-                            </div>
-                            
-                            <!-- Multiple Radios -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="preference">Preference</label>
-                                <div class="col-md-4">
-                                    <div class="radio">
-                                        <label for="preference-0">
-                                            <input type="radio" name="preference" id="driver" value="driver" checked="checked">
-                                            Driver
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="preference-1">
-                                            <input type="radio" name="preference" id="rider" value="rider">
-                                            Rider
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Multiple Radios -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="car">Do you have a car on campus?</label>
-                                <div class="col-md-4">
-                                    <div class="radio">
-                                        <label for="car-0">
-                                            <input type="radio" name="car" id="carYes" value="yes" checked="checked">
-                                            Yes
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label for="car-1">
-                                            <input type="radio" name="car" id="carNo" value="no">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Text input-->
-                            <div id="additionalQuestions">
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="carMake">Car make &amp; model</label>  
-                                    <div class="col-md-4">
-                                        <input id="carMake" name="carMake" type="text" placeholder="(Toyota Camry, Honda Civic)" class="form-control input-md">
-                                    </div>
-                                </div>
-                                
-                                <!-- Select Basic -->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="carColor">Car color</label>
-                                    <div class="col-md-4">
-                                        <select id="carColor" name="carColor" class="form-control">
-                                            <option value="black">Black</option>
-                                            <option value="blue">Blue</option>
-                                            <option value="gray">Gray</option>
-                                            <option value="green">Green</option>
-                                            <option value="red">Red</option>
-                                            <option value="silver">Silver</option>
-                                            <option value="tan">Tan</option>
-                                            <option value="white">White</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="success"></div>
-                            <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
+                <h1>Sign up for JCar</h1>
+                <p>It's free to use JCar! Fill out the form below to get started. 
+                    <br><em>NOTE: You must be a WashU student.</em>
+                </p>    
+                <form enctype="multipart/form-data" method="POST" class="form-horizontal">
+                    <fieldset>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="firstName">First Name</label>  
+                            <div class="col-md-4">
+                                <input id="firstName" name="firstName" type="text" placeholder="first name" class="form-control input-md" required="">  
                             </div>
                         </div>
-                        </fieldset>
-                    </form>
-                </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="lastName">Last Name</label>  
+                            <div class="col-md-4">
+                                <input id="lastName" name="lastName" type="text" placeholder="last name" class="form-control input-md" required="">    
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">WashU email</label>  
+                            <div class="col-md-4">
+                                <input id="email" name="email" type="text" placeholder="@wustl.edu" class="form-control input-md" required="">  
+                            </div>
+                        </div>
+                        
+                        <!-- Password input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="password">Password</label>
+                            <div class="col-md-4">
+                                <input id="password" name="password" type="password" placeholder="password" class="form-control input-md" required=""> 
+                            </div>
+                        </div>
+                        
+                        <!-- Confirm password-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="confirmPassword">Confirm password</label>
+                            <div class="col-md-4">
+                                <input id="confirmPassword" name="confirmPassword" type="password" placeholder="retype your password" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        
+                        <!-- Alert message for password check-->
+                        <div class="passwordMatchSymbol" id="checkPasswordMatch">
+                        </div>
+                        
+                        <!-- Multiple Radios -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="preference">Preference</label>
+                            <div class="col-md-4">
+                                <div class="radio">
+                                    <label for="preference-0">
+                                        <input type="radio" name="preference" id="driver" value="driver" checked="checked">
+                                        Driver
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="preference-1">
+                                        <input type="radio" name="preference" id="rider" value="rider">
+                                        Rider
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Multiple Radios -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="car">Do you have a car on campus?</label>
+                            <div class="col-md-4">
+                                <div class="radio">
+                                    <label for="car-0">
+                                        <input type="radio" name="car" id="carYes" value="yes" checked="checked">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="car-1">
+                                        <input type="radio" name="car" id="carNo" value="no">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div id="additionalQuestions">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="carMake">Car make &amp; model</label>  
+                                <div class="col-md-4">
+                                    <input id="carMake" name="carMake" type="text" placeholder="(Toyota Camry, Honda Civic)" class="form-control input-md">
+                                </div>
+                            </div>
+                            
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="carColor">Car color</label>
+                                <div class="col-md-4">
+                                    <select id="carColor" name="carColor" class="form-control">
+                                        <option value="black">Black</option>
+                                        <option value="blue">Blue</option>
+                                        <option value="gray">Gray</option>
+                                        <option value="green">Green</option>
+                                        <option value="red">Red</option>
+                                        <option value="silver">Silver</option>
+                                        <option value="tan">Tan</option>
+                                        <option value="white">White</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="success"></div>
+                        <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" name="createAccount" class="btn btn-success btn-lg">Create Account</button>
+                        </div>
+                    </div>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </section>
@@ -243,6 +226,7 @@
             <p>Copyright &copy JCar 2015</p>
         </div>
     </footer>
+
 
     <!-- jQuery -->
     <script src="Templates/startbootstrap-grayscale-1.0.4/js/jquery.js"></script>
@@ -285,7 +269,10 @@
                 $("#additionalQuestions").hide("slow");
             });
         });
+        
+        
     </script>
+
 
 </body>
 

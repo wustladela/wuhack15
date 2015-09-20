@@ -9,7 +9,7 @@ body {
     height: 100%;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
-    background-color: #000;
+    background-color: #000F1F;
 }
 
 html {
@@ -25,8 +25,9 @@ h5,
 h6 {
     margin: 0 0 35px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 1px;
+    font-size:50px;
 }
 
 p {
@@ -65,7 +66,7 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #000;
+    background-color: #000F1F;
 }
 
 .navbar-custom .navbar-brand {
@@ -135,7 +136,7 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #000;
+        background: #000F1F;
     }
 }
 
@@ -147,7 +148,7 @@ a:focus {
     text-align: center;
     color: #fff;
     background: url(../img/cityhighway.jpg) no-repeat bottom center scroll;
-    background-color: #000;
+    background-color: #000F1F;
     height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -265,8 +266,8 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-    background-color: #000;
+    background: url(../img/lights.jpg) no-repeat center center scroll;
+    background-color: #001429;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -305,18 +306,33 @@ a:focus {
 }
 
 .btn-default {
-    border: 1px solid #42dca3;
-    color: #42dca3;
+    border: 1px solid #001A33;
+    color: #000;
     background-color: transparent;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #42dca3;
+    border: 1px solid #001A33;
     outline: 0;
     color: #000;
-    background-color: #42dca3;
+    background-color: #001A33;
 }
+
+.introbtn {
+    border-radius: 0;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+}
+
 
 ul.banner-social-buttons {
     margin-top: 0;
@@ -350,13 +366,13 @@ footer p {
 
 ::-moz-selection {
     text-shadow: none;
-    background: #fcfcfc;
+    background: #001429;
     background: rgba(255,255,255,.2);
 }
 
 ::selection {
     text-shadow: none;
-    background: #fcfcfc;
+    background: #001429;
     background: rgba(255,255,255,.2);
 }
 
@@ -380,4 +396,17 @@ body {
     margin-right: 4px;
 }
 
+.drivers{
+    height:500px;
+    width: 500px;
+    float:left;
+    background: rgba(36, 37, 80, 0.8);
+}
+
+.riders{
+    height:500px;
+    width:500px;
+    float:right;
+    background: rgba(36,37,80,0.8);
+}
 
