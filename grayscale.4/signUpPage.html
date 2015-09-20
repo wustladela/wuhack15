@@ -15,9 +15,13 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional tags -->
     <link href="css/bootstrap.min2.css" rel="stylesheet">
-
+    <!-- time picker CSS -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.timeentry.css"> 
+    <script type="text/javascript" src="js/jquery.plugin.js"></script> 
+    <script type="text/javascript" src="js/jquery.timeentry.js"></script>
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -101,7 +105,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>First Name</label>
@@ -179,7 +183,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend></legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -208,7 +212,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="timePicker">Time</label>  
   <div class="col-md-4">
-  <input id="timePicker" name="timePicker" type="text" placeholder="https://fgelinas.com/code/timepicker/" class="form-control input-md" required="">
+  <input id="timePicker" name="timePicker" type="text" placeholder="" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -249,7 +253,82 @@
 
 </fieldset>
 </form>
+<br>
+<br>
 
+<h2>Rider Search Rides</h2>
+                    <form class="form-horizontal">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Destination</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Walmart" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pickupLoc">Pick Up Location</label>
+  <div class="col-md-4">
+    <select id="pickupLoc" name="pickupLoc" class="form-control">
+      <option value="">Clock Tower</option>
+      <option value="">Village</option>
+      <option value="">DUC</option>
+      <option value="">560 Music Center</option>
+      <option value="">Brookings</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="timePicker">Time</label>  
+  <div class="col-md-4">
+  <input id="timePicker" name="timePicker" type="time" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="numSeatsLeftRider">Number of Seats</label>  
+  <div class="col-md-4">
+  <input id="numSeatsLeftRider" name="numSeatsLeftRider" type="number" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="carTypeRider">Type of car</label>  
+  <div class="col-md-4">
+  <input id="carTypeRider" name="carTypeRider" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="driverPrice">Price</label>  
+  <div class="col-md-4">
+  <input id="riderPriceMin" name="driverPrice" type="number" class="form-control input-md" required="" placeholder="Min price">
+  <input id="riderPriceMax" name="driverPrice" type="number" class="form-control input-md" required="" placeholder="Max price">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="riderSubmitBtn"></label>
+  <div class="col-md-4">
+    <button id="riderSubmitBtn" name="riderSubmitBtn" class="btn btn-success">Search</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
 
 
             </div>
@@ -257,13 +336,14 @@
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="content-section text-center">
+    <section id="riderSection" class="content-section text-center">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                    
+
+
+                    <!-- <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a> -->
                 </div>
             </div>
         </div>
@@ -316,6 +396,13 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#timePicker").click(function(){
+                $("#timePicker").timeEntry();
+            });
+        });
+    </script>
 
 </body>
 
