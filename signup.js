@@ -12,6 +12,7 @@ function signUp(event) {
   var carBrand  = document.getElementById("carBrand").value;
   var carType   = document.getElementById("carType").value;
   var carColor  = document.getElementById("carColor").value; 
+  var existingRides = [];
 
   var prefDriver;
   if(document.getElementById("driver").checked) {
@@ -54,6 +55,7 @@ function signUp(event) {
   user.set("carType", carType);
   user.set("carColor", carColor);
   user.set("preference", prefDriver);
+  user.set("existingRides", []);
   user.signUp(null, {
   success: function(user) {
     // Hooray! Let them use the app now.
