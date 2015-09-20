@@ -41,9 +41,6 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
-                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -115,70 +112,118 @@
                     <p>It's free to use JCar! Fill out the form below to get started. 
                         <br><em>NOTE: You must be a WashU student.</em>
                     </p>
-                    <form>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                First Name
-                                <input type="text" class="form-control" placeholder="First name" id="firstName">
-                                <p class="help-block text-danger"></p>
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="firstName">First Name</label>  
+                                <div class="col-md-4">
+                                    <input id="firstName" name="firstName" type="text" placeholder="first name" class="form-control input-md" required="">  
+                                </div>
                             </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                Last Name
-                                <input type="text" class="form-control" placeholder="Last name" id="lastName">
-                                <p class="help-block text-danger"></p>
+                            
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="lastName">Last Name</label>  
+                                <div class="col-md-4">
+                                    <input id="lastName" name="lastName" type="text" placeholder="last name" class="form-control input-md" required="">    
+                                </div>
                             </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                WashU Email Address
-                                <input type="email" class="form-control" placeholder="@wustl.edu" id="email" >
-                                <p class="help-block text-danger"></p>
+                            
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="email">WashU email</label>  
+                                <div class="col-md-4">
+                                    <input id="email" name="email" type="text" placeholder="@wustl.edu" class="form-control input-md" required="">  
+                                </div>
                             </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                Password
-                                <input type="password" class="form-control" placeholder="Password" id="password">
-                                <p class="help-block text-danger"></p>
+                            
+                            <!-- Password input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="password">Password</label>
+                                <div class="col-md-4">
+                                    <input id="password" name="password" type="password" placeholder="password" class="form-control input-md" required=""> 
+                                </div>
                             </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                Confirm password
-                                <input type="password" class="form-control" placeholder="Re-type password" id="confirmPassword">
-                                <p class="help-block text-danger"></p>
+                            
+                            <!-- Confirm password-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="confirmPassword">Confirm password</label>
+                                <div class="col-md-4">
+                                    <input id="confirmPassword" name="confirmPassword" type="password" placeholder="retype your password" class="form-control input-md" required="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                Car Brand
-                                <input type="text" class="form-control" placeholder="Car brand" id="carBrand">
-                                <p class="help-block text-danger"></p>
+                            
+                            <!-- Alert message for password check-->
+                            <div class="passwordMatchSymbol" id="checkPasswordMatch">
                             </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                Car Type
-                                <input type="text" class="form-control" placeholder="Car brand" id="carType">
-                                <p class="help-block text-danger"></p>
+                            
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="preference">Preference</label>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label for="preference-0">
+                                            <input type="radio" name="preference" id="driver" value="driver" checked="checked">
+                                            Driver
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="preference-1">
+                                            <input type="radio" name="preference" id="rider" value="rider">
+                                            Rider
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                Car Color
-                                <input type="text" class="form-control" placeholder="Car brand" id="carColor">
-                                <p class="help-block text-danger"></p>
+                            
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="car">Do you have a car on campus?</label>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label for="car-0">
+                                            <input type="radio" name="car" id="carYes" value="yes" checked="checked">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="car-1">
+                                            <input type="radio" name="car" id="carNo" value="no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
-                            </div>
-                        </div>
+                            
+                            <!-- Text input-->
+                            <div id="additionalQuestions">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="carMake">Car make &amp; model</label>  
+                                    <div class="col-md-4">
+                                        <input id="carMake" name="carMake" type="text" placeholder="(Toyota Camry, Honda Civic)" class="form-control input-md">
+                                    </div>
+                                </div>
+                                
+                                <!-- Select Basic -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="carColor">Car color</label>
+                                    <div class="col-md-4">
+                                        <select id="carColor" name="carColor" class="form-control">
+                                            <option value="black">Black</option>
+                                            <option value="blue">Blue</option>
+                                            <option value="gray">Gray</option>
+                                            <option value="green">Green</option>
+                                            <option value="red">Red</option>
+                                            <option value="silver">Silver</option>
+                                            <option value="tan">Tan</option>
+                                            <option value="white">White</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>       
+                        </fieldset>
                     </form>
                 </div>
             </div>
@@ -209,6 +254,34 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="Templates/startbootstrap-grayscale-1.0.4/js/grayscale.js"></script>
+    
+    <script type="text/javascript">
+        function checkPasswordMatch() {
+            var password = $("#password").val();
+            var confirmPassword = $("#confirmPassword").val();
+            if (password != confirmPassword){
+                $("#checkPasswordMatch").html("Passwords don't match.");
+            }
+            else{
+                $("#checkPasswordMatch").html("Passwords match!");
+            }
+        }
+
+        $(document).ready(function () {
+            $("#confirmPassword").keyup(checkPasswordMatch);
+            $("#driver").prop('checked',false);
+            $("#rider").prop('checked',false);
+            $("#carYes").prop('checked',false);
+            $("#carNo").prop('checked',false);
+            $("#additionalQuestions").hide();
+            $("#carYes").click(function(){
+                $("#additionalQuestions").show("slow");
+            });
+            $("#carNo").click(function(){
+                $("#additionalQuestions").hide("slow");
+            });
+        });
+    </script>
 
 </body>
 
