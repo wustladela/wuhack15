@@ -30,6 +30,10 @@ function submitRide(event) {
   rides.set("numSeats", numSeats);
   rides.set("price", price);
   rides.set("createdBy", Parse.User.current());
+  var first = Parse.User.current().get("firstName");
+  var last = Parse.User.current().get("lastName");
+  var driverName = first + " " + last;
+  rides.set("driverName", driverName);
 
   rides.save(null, {
 		success: function(gameScore) {
