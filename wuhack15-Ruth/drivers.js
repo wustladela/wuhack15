@@ -8,7 +8,7 @@ if (!Parse.User.current()){
 function submitRide(event) {
 	var pickupLoc = document.getElementById("pickupLoc").value;
   var destination = document.getElementById("destination").value;
-	var date = document.getElementById("datePicker").value;
+	var date = document.getElementById("datePicker").value || "";
 	var time = document.getElementById("timePicker").value.toLocaleString();
 	var dateTime = new Date(date + " " + time);
 	var numSeats = Number(document.getElementById("numSeats").value);

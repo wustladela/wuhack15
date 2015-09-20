@@ -14,6 +14,8 @@
     
     <!-- Bootstrap Core CSS -->
     <link href="Templates/startbootstrap-grayscale-1.0.4/css/bootstrap.min.css" rel="stylesheet">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
 
     <!-- Custom CSS -->
     <link href="Templates/startbootstrap-grayscale-1.0.4/css/grayscale.css" rel="stylesheet">
@@ -51,16 +53,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#signup">Sign Up</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Log In</a>
+                        <a class="page-scroll" href="#login">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -76,11 +72,11 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">JCar</h1>
-                        <p class="intro-text">Need a ride?<br>Git in the car.</p>
+                        <p class="intro-text">A carpool coordinator<br><br>JCar matches drviers with riders who share the same destination.</p>
                         <a href="#signup" class="introbtn page-scroll">
                             <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
                         </a>
-                        <a href="#signup" class="introbtn page-scroll">
+                        <a href="#login" class="introbtn page-scroll">
                             <button type="submit" class="btn btn-success btn-lg">Log In</button>
                         </a>
                     </div>
@@ -89,14 +85,12 @@
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <!-- Signup Section -->
+    <section id="signup" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h1>Sign up for JCar</h1>
-                <p>It's free to use JCar! Fill out the form below to get started. 
-                    <br><em>NOTE: You must be a WashU student.</em>
-                </p>    
+
                 <form enctype="multipart/form-data" method="POST" class="form-horizontal">
                     <fieldset>
                         <!-- Text input-->
@@ -127,7 +121,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="password">Password</label>
                             <div class="col-md-4">
-                                <input id="password" name="password" type="password" placeholder="password" class="form-control input-md" required=""> 
+                                <input id="1password" name="password" type="password" placeholder="password" class="form-control input-md" required=""> 
                             </div>
                         </div>
                         
@@ -135,7 +129,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="confirmPassword">Confirm password</label>
                             <div class="col-md-4">
-                                <input id="confirmPassword" name="confirmPassword" type="password" placeholder="retype your password" class="form-control input-md" required="">
+                                <input id="confirm" name="confirmPassword" type="password" placeholder="retype your password" class="form-control input-md" required="">
                             </div>
                         </div>
                         
@@ -184,9 +178,16 @@
                         <!-- Text input-->
                         <div id="additionalQuestions">
                             <div class="form-group">
-                                <label class="col-md-4 control-label" for="carMake">Car make &amp; model</label>  
+                                <label class="col-md-4 control-label" for="carMake">Car make</label>  
                                 <div class="col-md-4">
-                                    <input id="carMake" name="carMake" type="text" placeholder="(Toyota Camry, Honda Civic)" class="form-control input-md">
+                                    <input id="carBrand" name="carBrand" type="text" placeholder="(Toyota, Honda)" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="carType">Car model</label>  
+                                <div class="col-md-4">
+                                    <input id="carType" name="carType" type="text" placeholder="(Camry, Civic)" class="form-control input-md">
                                 </div>
                             </div>
                             
@@ -211,11 +212,47 @@
                         <div id="success"></div>
                         <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" name="createAccount" class="btn btn-success btn-lg">Create Account</button>
+                            <button id="signUpButton" class="btn btn-success btn-lg">Create Account</button>
                         </div>
                     </div>
                     </fieldset>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1>Log in to JCar</h1>
+
+                <div class="form-horizontal">
+                    <fieldset>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">WashU username</label>  
+                            <div class="col-md-4">
+                                <input id="username" name="email" type="text" placeholder="@wustl.edu" class="form-control input-md" required="">  
+                            </div>
+                        </div>
+                        
+                        <!-- Password input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="password">Password</label>
+                            <div class="col-md-4">
+                                <input id="password" name="password" type="password" placeholder="password" class="form-control input-md" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div id="success"></div>
+                        <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button id="loginButton" class="btn btn-success btn-lg">Log In</button>
+                        </div>
+                    </div>
+                    </fieldset>
+                </div>
             </div>
         </div>
     </section>
@@ -242,7 +279,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="Templates/startbootstrap-grayscale-1.0.4/js/grayscale.js"></script>
-    
+
     <script type="text/javascript">
         function checkPasswordMatch() {
             var password = $("#password").val();
@@ -273,7 +310,8 @@
         
     </script>
 
-
+     <script src="signup.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>

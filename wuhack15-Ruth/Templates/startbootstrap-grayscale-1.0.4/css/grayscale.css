@@ -9,7 +9,7 @@ body {
     height: 100%;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
-    background-color: #000F1F;
+    background-color: #000;
 }
 
 html {
@@ -66,7 +66,7 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #000F1F;
+    background-color: #000;
 }
 
 .navbar-custom .navbar-brand {
@@ -136,7 +136,7 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #000F1F;
+        background: #000;
     }
 }
 
@@ -267,7 +267,7 @@ a:focus {
     padding: 50px 0;
     color: #fff;
     background: url(../img/lights.jpg) no-repeat center center scroll;
-    background-color: #001429;
+    background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -358,6 +358,7 @@ ul.banner-social-buttons {
 
 footer {
     padding: 50px 0;
+    background: url(../img/cityhighway.jpg) no-repeat bottom center scroll;
 }
 
 footer p {
@@ -410,3 +411,158 @@ body {
     background: rgba(36,37,80,0.8);
 }
 
+/* Overlay when Modal is open */
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+ 
+/* Modal box or Popup box */
+.popupContainer{
+	position:absolute;
+	width:330px;
+	height: auto;
+	left:45%;
+	top:80px;
+	background: #FFF;
+}
+
+CSS
+
+/* Popup Styles*/
+.popupHeader  {
+    font-size: 16px;
+     text-transform:  uppercase;
+}
+
+.popupHeader  {
+    background: #F4F4F2;
+     position: relative;
+     padding: 10px 20px;
+     border-bottom: 1px solid #DDD;
+     font-weight: bold;
+}
+
+.popupHeader .modal_close  {
+    position:  absolute;
+     right:  0;
+     top: 0;
+     padding: 10px 15px;
+     background: #E4E4E2;
+     cursor:  pointer;
+     color: #aaa;
+     font-size: 16px;
+}
+
+.popupBody  {
+    padding: 20px;
+}
+
+/* Popup Styles*/
+.popupHeader  {
+    font-size: 16px;
+     text-transform:  uppercase;
+}
+ 
+.popupHeader  {
+    background: #F4F4F2;
+     position: relative;
+     padding: 10px 20px;
+     border-bottom: 1px solid #DDD;
+     font-weight: bold;
+}
+ 
+.popupHeader .modal_close  {
+    position:  absolute;
+     right:  0;
+     top: 0;
+     padding: 10px 15px;
+     background: #E4E4E2;
+     cursor:  pointer;
+     color: #aaa;
+     font-size: 16px;
+}
+ 
+.popupBody  {
+    padding: 20px;
+}
+
+#modal_trigger{
+    margin:100px auto;
+    width:100px;
+    display:block;
+}
+
+/* User Login Form */
+.user_login  {
+    display:  none;
+}
+ 
+.user_login label  {
+    display:  block;
+     margin-bottom: 5px;
+}
+ 
+.user_login input[type="text"],  .user_login input[type="email"],  .user_login input[type="password"]  {
+    display:  block;
+     width: 90%;
+     padding:  10px;
+     border: 1px solid #DDD;
+     color: #666;
+}
+ 
+.user_login input[type="checkbox"]  {
+    float: left;
+     margin-right: 5px;
+}
+ 
+.user_login input[type="checkbox"]+label  {
+    float: left;
+}
+ 
+ 
+.user_login .checkbox  {
+    margin-bottom:  10px;
+     clear:  both;
+     overflow:  hidden;
+}
+
+/* User Register Form */
+.user_register  {
+    display:  none;
+}
+ 
+.user_register label  {
+    display:  block;
+     margin-bottom: 5px;
+}
+ 
+.user_register input[type="text"],  .user_register input[type="email"],  .user_register input[type="password"]  {
+    display:  block;
+     width: 90%;
+     padding:  10px;
+     border: 1px solid #DDD;
+     color: #666;
+}
+ 
+.user_register input[type="checkbox"]  {
+    float: left;
+     margin-right: 5px;
+}
+ 
+.user_register input[type="checkbox"]+label  {
+    float: left;
+}
+ 
+ 
+.user_register .checkbox  {
+    margin-bottom:  10px;
+     clear:  both;
+     overflow:  hidden;
+}
