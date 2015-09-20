@@ -4,24 +4,22 @@ document.getElementById("loginButton").addEventListener("click", login, false);
 
 function login(event) {
 	
-  var email     = document.getElementById("email").value;
+  var username     = document.getElementById("username").value;
   var password  = document.getElementById("password").value;
   
-  if (!email || !password) {
+  if (!username || !password) {
     alert("Fill out all fields!");
     return;
   }
 
-  var query = new Parse.Query("Users");
-  query.equalTo("Email", email);
-  query.equalTo("Pass", password);
-  query.find({
-    success: function(results) {
-      if (results.length > 0) {
-      	alert("LOGIN SUCCESSFUL");
-      } else {
-      	alert("LOGIN FAILED");
-      }
-  	}
-  });
-}
+  Parse.User.logIn(username, password, {
+  success: function(user) {
+    // Do stuff after successful login.
+    alert("SUCCESS");
+  },
+  error: function(user, error) {
+    // The login failed. Check error to see why.
+    alert("SUCCESS");
+  }
+});}
+
