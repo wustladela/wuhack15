@@ -24,7 +24,6 @@ h4,
 h5,
 h6 {
     margin: 0 0 35px;
-    text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -261,7 +260,7 @@ a:focus {
     padding-top: 100px;
 }
 
-.download-section {
+.signup-section {
     width: 100%;
     padding: 50px 0;
     color: #fff;
@@ -284,7 +283,7 @@ a:focus {
         padding-top: 250px;
     }
 
-    .download-section {
+    .signup-section {
         padding: 100px 0;
     }
 
