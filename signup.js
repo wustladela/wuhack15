@@ -5,6 +5,7 @@ document.getElementById("signUpButton").addEventListener("click", signUp, false)
 function signUp(event) {
   var firstName = document.getElementById("firstName").value;
   var lastName  = document.getElementById("lastName").value;
+  var username  = document.getElementById("username").value;
   var email     = document.getElementById("email").value;
   var password  = document.getElementById("password").value;
   var confirm   = document.getElementById("confirmPassword").value;
@@ -27,40 +28,41 @@ function signUp(event) {
     return;
   }
 
+  if (!password.match(confirm)) {
+    alert("Passwords don't match!");
+    return;
+  }
+
+  if (password.length < 8) {
+    alert("Password not long enough!");
+    return;
+  }
+
   var re = /.*@wustl\.edu$/;
   if (!email.match(re)) {
     alert("You must use your wustl email");
     return;
   }
 
-  var query = new Parse.Query("Users");
-  query.equalTo("Email", email);
-  query.find({
-    success: function(results) {
-      if (results.length == 0) {
-        var UserTable = Parse.Object.extend("Users");
-        var userTable = new UserTable();
+  var user = new Parse.User();
+  user.set("username", username);
+  user.set("password", password);
+  user.set("email", email);
 
-        userTable.save({FirstName: firstName,
-          LastName: lastName,
-          Pass: password,
-          Email: email,
-          CarType: carType,
-          CarBrand: carBrand,
-          CarColor: carColor,
-          Preference: prefDriver
-          }, {
-            success: function(object) {
-              alert("SUCCESS");
-            },
-            error: function(model, error) {
-              alert("FAIL");
-            }
-          });
-        } else {
-          alert("EMAIL ALREADY EXISTS");
-        }
-    }
+  user.set("firstName", firstName);
+  user.set("lastName", lastName);
+  user.set("carType", carType);
+  user.set("carColor", carColor);
+  user.set("preference", prefDriver);
+  user.signUp(null, {
+  success: function(user) {
+    // Hooray! Let them use the app now.
+    alert("SUCCESS");
+  },
+  error: function(user, error) {
+    // Show the error message somewhere and let the user try again.
+    alert("Error: " + error.code + " " + error.message);
+  }
   });
 }
 
