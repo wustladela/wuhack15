@@ -2,6 +2,7 @@ Parse.initialize("eamcKJmUTepWXqQzYx5iNmgVUcX55xvCQX749IfY", "Gg3ZOGnMTkHaMIOZ0O
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	var Rides = Parse.Object.extend("Rides");
+	var rides = new Rides();
 	var query = new Parse.Query(Rides);
 	var now = new Date();
 	query.greaterThan("date", now);
@@ -11,22 +12,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			for (i = 0; i < results.length; i++) {
 				var ride = results[i];
 				var node = document.createElement("div");
-				node.id = "posting";
-	
+				node.class = "posting";
 
-				var nameLabel = document.createElement("h1");
-				nameLabel.innerHTML = ride.get("driverName");
+
+				var destination = document.createElement("h3");
+				destination.innerHTML = ride.get("destination");
+				node.appendChild(destination);
+
+				var nameLabel = document.createElement("label");
+				nameLabel.innerHTML = "Driver's Name: ";
 				node.appendChild(nameLabel);
+				var driversName = document.createTextNode(ride.get("driverName"));
+				node.appendChild(driversName);
 				var br1 = document.createElement("br"); 
 				node.appendChild(br1);
-
-				var destinationLabel = document.createElement("label");
-				destinationLabel.innerHTML = "Destination:    ";
-				node.appendChild(destinationLabel);
-				var destination = document.createTextNode(ride.get("destination"));
-				node.appendChild(destination);
-				var br2 = document.createElement("br"); 
-				node.appendChild(br2);
 
 				var pickupLabel = document.createElement("label");
 				pickupLabel.innerHTML = "Pickup Location:    ";
@@ -62,6 +61,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				var br6 = document.createElement("br"); 
 				node.appendChild(br6);
 
+				var joinRideBtn = document.createElement("button");
+				joinRideBtn.innerHTML = "Join Ride!";
+				joinRideBtn.id = ride.id;
+				joinRideBtn.addEventListener("click", function(event) {
+
+					var Rides2 = Parse.Object.extend("Rides");
+					var rides2 = new Rides();
+					rides2.id = event.target.id;
+					rides2.add("riders", Parse.User.current().get("firstName") + " " + Parse.User.current().get("lastName"));
+					rides2.save(null, {
+						success: function(object) {
+							alert("You've been signed up!");
+						}, 
+						error: function(error) {
+							alert("Error: " + error.code + " " + error.message);
+						}
+					});
+
+				}, false);
+				node.appendChild(joinRideBtn);
+				
 				document.getElementById("main").appendChild(node);
 			}
 		},
@@ -72,3 +92,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 }, false);
+
+
+
+
