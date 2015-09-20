@@ -22,23 +22,10 @@ function signUp(event) {
     return;
   }
 
-  //verify email and check it hasn't already been used
-  var username  = "JasonLi914";
-  var pass      = "eggs10430";
-  var apiURL    = "http://api.verify-email.org/api.php?";
-
-  var url       = apiURL + "usr=" + username + "&pwd=" + pass + "&check=" + email;
-
-
-
-
-
   if (!firstName || !lastName || !email || !password) {
     alert("Fill out all fields!");
     return;
   }
-
-  if ()
 
   var re = /.*@wustl\.edu$/;
   if (!email.match(re)) {
@@ -46,28 +33,36 @@ function signUp(event) {
     return;
   }
 
-  var UserTable = Parse.Object.extend("Users");
-  var userTable = new UserTable();
+  var query = new Parse.Query("Users");
+  query.equalTo("Email", email);
+  query.find({
+    success: function(results) {
+      if (results.length == 0) {
+        var UserTable = Parse.Object.extend("Users");
+        var userTable = new UserTable();
 
-  userTable.save({FirstName: firstName,
-    LastName: lastName,
-    Pass: password,
-    Email: email,
-    CarType: carType,
-    CarBrand: carBrand,
-    CarColor: carColor,
-    Preference: prefDriver
-    }, {
-      success: function(object) {
-        alert("SUCCESS");
-        return true;
-      },
-      error: function(model, error) {
-        alert("FAIL");
-        return false;
-      }
-    });
-
+        userTable.save({FirstName: firstName,
+          LastName: lastName,
+          Pass: password,
+          Email: email,
+          CarType: carType,
+          CarBrand: carBrand,
+          CarColor: carColor,
+          Preference: prefDriver
+          }, {
+            success: function(object) {
+              alert("SUCCESS");
+            },
+            error: function(model, error) {
+              alert("FAIL");
+            }
+          });
+        } else {
+          alert("EMAIL ALREADY EXISTS");
+        }
+    }
+  });
 }
+
 
 
