@@ -4,13 +4,15 @@ document.getElementById("driverSubmitBtn").addEventListener("click", submitRide,
 
 function submitRide(event) {
 	var pickupLoc = document.getElementById("pickupLoc").value;
+  var destination = document.getElementById("destination").value;
 	var date = document.getElementById("datePicker").value;
 	var time = document.getElementById("timePicker").value.toLocaleString();
 	var dateTime = new Date(date + " " + time);
 	var numSeats = Number(document.getElementById("numSeats").value);
 	var price = Number(document.getElementById("driverPrice").value);
 
-	if (!pickupLoc || !date || !time || !numSeats || !price) {
+
+	if (!pickupLoc || !destination || !date || !time || !numSeats || !price) {
 		return;
 	}
 
@@ -23,6 +25,7 @@ function submitRide(event) {
 	var Rides = Parse.Object.extend("Rides");
   var rides = new Rides();
   rides.set("pickupLoc", pickupLoc);
+  rides.set("destination", destination);
   rides.set("date", dateTime);
   rides.set("numSeats", numSeats);
   rides.set("price", price);
