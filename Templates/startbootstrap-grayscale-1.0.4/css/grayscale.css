@@ -146,8 +146,9 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(../img/cityhighway.jpg) no-repeat bottom center scroll;
     background-color: #000;
+    height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
