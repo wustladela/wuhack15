@@ -14,23 +14,29 @@ function submitRide(event) {
 		return;
 	}
 
-	var Rides = Parse.Object.extend("Rides");
-    var rides = new Rides();
-    rides.set("pickupLoc", pickupLoc);
-    rides.set("date", dateTime);
-    rides.set("numSeats", numSeats);
-    rides.set("price", price);
-    rides.set("createdBy", Parse.User.current());
+  var now = new Date();
+  if (dateTime <= now) {
+    alert("Time travel doesn't exist!");
+    return;
+  }
 
-    rides.save(null, {
-  		success: function(gameScore) {
-    // Execute any logic that should take place after the object is saved.
-   		alert("success");
-  	},
-  	error: function(gameScore, error) {
-    // Execute any logic that should take place if the save fails.
-    // error is a Parse.Error with an error code and message.
-	   alert('Failed to create new object, with error code: ' + error.message);
+	var Rides = Parse.Object.extend("Rides");
+  var rides = new Rides();
+  rides.set("pickupLoc", pickupLoc);
+  rides.set("date", dateTime);
+  rides.set("numSeats", numSeats);
+  rides.set("price", price);
+  rides.set("createdBy", Parse.User.current());
+
+  rides.save(null, {
+		success: function(gameScore) {
+  // Execute any logic that should take place after the object is saved.
+ 		alert("success");
+	},
+	error: function(gameScore, error) {
+  // Execute any logic that should take place if the save fails.
+  // error is a Parse.Error with an error code and message.
+   alert('Failed to create new object, with error code: ' + error.message);
 	}
 });
 }
